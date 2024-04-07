@@ -46,11 +46,15 @@ def result():
 
     # Depending on the option chosen, sent a request 2 Jupyter
     if option == 'Vaarthai Vagai':
+        types = ["இடப்பெயர்", "காலப்பெயர்", "சினைப்பெயர்", "தொழிற்பெயர்", "பொருட்பெயர்", "பண்புப்பெயர்"]
         result = execute_notebook('ran-word.ipynb', 'ran-word.nbconvert.ipynb')
         temp = word_type_rand(result)
         if result is not None:
             # Return the output to the clientr
-            return render_template('result.html', result=temp)
+            res = temp.split(" - ")
+            res.append(option)
+            res.append(types)
+            return render_template('result.html', result=res)
         else:
             return "Error executing notebook"
     else:

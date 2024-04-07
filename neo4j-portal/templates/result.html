@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>Practice {{result[2]}}</title>
 </head>
 <body>
-    <h1 style="text-align: left;padding-left: 5%;">Result</h1>
-    <p style="padding-left: 5%;">
-        Generated Example :-
-    </p>
-        <p style="padding-left: 7%;">{{ result }}</p>
-    <br>
-    <br>
-    <form style="padding-left: 5%;" action="/" class="inline">
-        <button class="float-left submit-button" >Home</button>
-    </form>
+    <div style="padding-left: 5%;">
+        <h1 style="text-align: left;">{{result[2]}}</h1>
+
+        <p>
+            Generated Example :-
+        </p>
+        <p>{{ result[0] }} - _______</p>
+        <p>
+            Attempt identifying the வார்த்தை வகை before checking the answer
+        </p>
+        <p>
+             {{result[3]}}  {{result[4]}}  {{result[5]}}  {{result[6]}}  {{result[7]}}  {{result[8]}}
+        </p>
+        <br>
+        <button onclick="showText()">Check Answer</button>
+        <br>
+        <br>
+        <p id="ans" style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{result[0]}} - {{result[1]}}</p>
+        <br>
+        <form action="/" class="inline">
+            <button class="float-left submit-button">Return Home</button>
+        </form>
+    </div>
+
+    <script>
+        function showText(){
+            var ans = document.getElementById('ans');
+            if(ans.style.visibility=="hidden"){
+                ans.style.visibility="visible";
+            } else{
+                ans.style.visibility="hidden"
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-    
