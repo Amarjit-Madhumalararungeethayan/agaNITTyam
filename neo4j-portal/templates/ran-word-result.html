@@ -9,15 +9,17 @@
     <div style="padding-left: 5%;">
         <h1 style="text-align: left;">{{result[2]}}</h1>
 
-        <p>
+        <p style="height: 20px;">
             Generated Example :-
         </p>
+        <br>
         <p>{{ result[0] }} - _______</p>
         <p>
-            Attempt identifying the வார்த்தை வகை before checking the answer
+             a) {{result[3][0]}}  b) {{result[3][1]}}  c) {{result[3][2]}}   d) {{result[3][3]}}   e) {{result[3][4]}}   f) {{result[3][5]}}
         </p>
+        <br>
         <p>
-             {{result[3]}}  {{result[4]}}  {{result[5]}}  {{result[6]}}  {{result[7]}}  {{result[8]}}
+            Attempt identifying the வார்த்தை வகை before checking the answer
         </p>
         <br>
         <button onclick="showText()">Check Answer</button>
@@ -25,9 +27,12 @@
         <br>
         <p id="ans" style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{result[0]}} - {{result[1]}}</p>
         <br>
-        <form action="/" class="inline">
-            <button class="float-left submit-button">Return Home</button>
-        </form>
+        <div>
+            <button class="float-left submit-button">New Word</button>
+            <form action="/home">
+                <button class="float-left submit-button">Return Home</button>
+            </form>
+        </div>
     </div>
 
     <script>

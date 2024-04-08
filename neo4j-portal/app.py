@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_debugtoolbar import DebugToolbarExtension
 import subprocess
 import nbformat
@@ -8,6 +8,7 @@ from helper_funtions.random_word_type import word_type_rand
 
 app = Flask(__name__)
 toolbar = DebugToolbarExtension(app)
+curr_note = ""
 
 def execute_notebook(notebook_filename, temp):
     
@@ -35,7 +36,7 @@ def execute_notebook(notebook_filename, temp):
 
     return (tagged_output)
 
-@app.route('/')
+@app.route('/home')
 def index():
     return render_template('index.html')
 
@@ -44,7 +45,7 @@ def result():
     option = request.form['option']
     print("☆ Chosen Option -> " + option)
 
-    # Depending on the option chosen, sent a request 2 Jupyter
+    # option Type of Word
     if option == 'Vaarthai Vagai':
         types = ["இடப்பெயர்", "காலப்பெயர்", "சினைப்பெயர்", "தொழிற்பெயர்", "பொருட்பெயர்", "பண்புப்பெயர்"]
         result = execute_notebook('ran-word.ipynb', 'ran-word.nbconvert.ipynb')
@@ -54,16 +55,12 @@ def result():
             res = temp.split(" - ")
             res.append(option)
             res.append(types)
-            return render_template('result.html', result=res)
+            return render_template('ran-word-result.html', result=res)
+        
         else:
             return "Error executing notebook"
     else:
         return "Invalid option"
-
-    # Check if the execution was successful
-    # Assuming execute_notebook() returns some meaningful result
-    print("Output from Jupyter Notebook execution:", result)
-    return render_template('result.html', result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
