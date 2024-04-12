@@ -5,6 +5,7 @@ import subprocess
 import nbformat
 
 from helper_funtions.random_word_type import word_type_rand
+from helper_funtions.synonym import synonym_gen
 
 app = Flask(__name__)
 toolbar = DebugToolbarExtension(app)
@@ -59,6 +60,15 @@ def result():
         
         else:
             return "Error executing notebook"
+    
+    elif option == "Synonym":
+        result = execute_notebook('synonym.ipynb', 'synonym.nbconvert.ipynb')
+        temp = synonym_gen(result)
+        if result is not None:
+            # Return the output to the clientr
+            res = temp.split('\\t')
+            return render_template('synonym-result.html', result=res)
+
     else:
         return "Invalid option"
 

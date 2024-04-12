@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice வார்த்தை வகை</title>
+    <title>Practice இணைப்பொருட்ச்சொல்</title>
 </head>
 <body>
     <div style="padding-left: 4%;">
-        <h1 style="text-align: left;">வார்த்தை வகை</h1>
+        <h1 style="text-align: left;">இணைப்பொருட்ச்சொல் </h1>
 
         <p style="height: 20px;">
             Choose the correct option:-
         </p>
         <br>
-        <p>{{ result[0] }} - _______</p>
+        <p>{{result[0]}} x ___________</p>
         <p>
-             a) {{result[3][0]}}  b) {{result[3][1]}}  c) {{result[3][2]}}   d) {{result[3][3]}}   e) {{result[3][4]}}   f) {{result[3][5]}}
+            a) அடைத்த  b) {{result[1]}}  c) ஆணவம்  d) இறக்கின்றன
         </p>
         <br>
         <p>
-            Attempt identifying the வார்த்தை வகை before checking the answer
+            Attempt identifying the இணைப்பொருட்ச்சொல் before checking the answer
         </p>
         <br>
         <button onclick="showText()">Check Answer</button>
         <br>
         <br>
-        <p id="ans" style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{result[0]}} - {{result[1]}}</p>
+        <p id="ans" style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{ result[0] }} x {{result[1]}}</p>
         <br>
         <div>
             <button class="float-left submit-button">New Word</button>
