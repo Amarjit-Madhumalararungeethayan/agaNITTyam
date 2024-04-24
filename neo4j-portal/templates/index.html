@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>agaNITTyam</title>
+    <link rel="stylesheet" type="text/css" href="static/index_style.css">
 </head>
 <body>
-    <h1 style="text-align: center;">Welcome to agaNITTyam</h1>
-    <br>
-    <p style="padding-left: 7%;padding-right: 7%;">With the help of our tool, anyone who wants to admire the intricacies of tamil grammar can do so, with ease. Our tamil dataset continues grow every day, as do our examples. <br>Browse through our categories and choose one to get started!</p>
-    <br>
-    <form style="padding-left: 7%"; action="/result" method="post">
-
-        <label for="option">Choose a category to Practice:</label>
-        <select id="option" name="option">
-            <option value="Vaarthai Vagai">வார்த்தை வகை</option>
-            <option value="Synonym">இணைப்பொருட்ச்சொல்</option>
-            <option value="option3">எதிர்ச்சொல்</option>
-        </select>
-        <br>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+    <header>
+        <h1>Welcome to agaNITTyam</h1>
+    </header>
+    <main>
+        <p>With the help of our tool, anyone who wants to admire the intricacies of Tamil grammar can do so with ease. Our Tamil dataset continues to grow every day, as do our examples. Browse through our categories and choose one to get started!</p>
+        <form id="categoryForm" action="/result" method="post">
+            <label>Choose a category to practice:</label>
+            <div class="button-container">
+                <button type="button" onclick="submitForm('Vaarthai Vagai')">வார்த்தை வகை</button>
+                <button type="button" onclick="submitForm('Synonym')">இணைப்பொருட்ச்சொல்</button>
+                <button type="button" onclick="submitForm('option3')">எதிர்ச்சொல்</button>
+            </div>
+            <input type="hidden" id="selectedOption" name="option">
+        </form>
+    </main>
+    <footer>
+        <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+    </footer>
+    <script>
+        function submitForm(option) {
+            document.getElementById('selectedOption').value = option;
+            document.getElementById('categoryForm').submit();
+        }
+    </script>
 </body>
 </html>

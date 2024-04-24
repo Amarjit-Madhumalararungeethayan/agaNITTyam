@@ -1,0 +1,136 @@
+/* index_style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+/* Font Family */
+body {
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #ff69b4;
+    padding: 20px 0;
+    text-align: center;
+    animation: fadeInDown 1s ease;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2em;
+    margin: 0;
+}
+
+.profile-icon {
+    margin-left: auto; /* Pushes the profile icon to the right */
+}
+
+.profile-icon img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%; /* Optional: Make the icon circular */
+    animation: fadeInDown 1s ease;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 600px;
+    margin: 100px auto 20px; /* Added top margin to push the main content below the header */
+    padding: 20px;
+    animation: fadeIn 1s ease;
+}
+
+p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Add margin-top to increase the gap */
+}
+
+button {
+    background-color: #ff69b4;
+    color: #fff;
+    padding: 10px 15px; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 1;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em; /* Decrease font size */
+    font-family: 'Bubblegum Sans', cursive; /* Apply Bubblegum Sans font */
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #ff69b4;
+    border: 1px solid rgb(172, 172, 172); /* Add black border */
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ff69b4;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    animation: slideInUp 1s ease;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

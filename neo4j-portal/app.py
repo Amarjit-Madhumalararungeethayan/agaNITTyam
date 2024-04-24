@@ -7,7 +7,7 @@ import nbformat
 from helper_funtions.random_word_type import word_type_rand
 from helper_funtions.synonym import synonym_gen
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 toolbar = DebugToolbarExtension(app)
 curr_note = ""
 
