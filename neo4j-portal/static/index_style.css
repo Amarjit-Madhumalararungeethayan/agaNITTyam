@@ -15,31 +15,32 @@ header {
     width: 100%;
     background-color: #ff69b4;
     padding: 20px 0;
-    text-align: center;
-    animation: fadeInDown 1s ease;
+    display: flex; /* Add flexbox */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    z-index: 999; /* Ensure the header is above other content */
 }
 
 h1 {
     color: #fff;
     font-size: 2em;
     margin: 0;
+    text-align: center; /* Center align the text */
+    flex-grow: 1; /* Allow the text to take up remaining space */
 }
 
-.profile-icon {
-    margin-left: auto; /* Pushes the profile icon to the right */
-}
-
-.profile-icon img {
-    width: 40px; /* Adjust size as needed */
+img {
+    width: 50px; /* Adjust size as needed */
     height: auto;
     border-radius: 50%; /* Optional: Make the icon circular */
     animation: fadeInDown 1s ease;
+    margin-right: 30px; /* Add margin to separate the icon from text */
 }
 
 /* Main Content Styles */
 main {
     max-width: 600px;
-    margin: 100px auto 20px; /* Added top margin to push the main content below the header */
+    margin: 140px auto 20px; /* Adjust top margin to center content vertically */
     padding: 20px;
     animation: fadeIn 1s ease;
 }
@@ -48,11 +49,12 @@ p {
     font-size: 1.1em;
     color: #333;
     line-height: 1.6;
+    margin-top: 5px; /* Decreased margin-top */
 }
 
 /* Form Styles */
 form {
-    margin-top: 20px;
+    margin-top: 50px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.3);
@@ -102,6 +104,57 @@ footer {
     padding: 10px 0;
     animation: slideInUp 1s ease;
 }
+
+.book-image{
+    padding-top: 30px;
+    width: 200px;
+    height: 200px;
+    display: block; 
+}
+
+.image-container {
+    position: relative;
+    display: inline-block; /* Ensure the container only takes the necessary space */
+}
+
+.image-text {
+    position: absolute;
+    top: 50%; /* Position the text vertically at the center */
+    left: calc(100% + 10px); /* Position the text to the right of the image with a 10px gap */
+    transform: translateY(-50%); /* Center the text vertically */
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.3s ease; /* Smooth transition effect */
+}
+
+.image-container:hover .image-text {
+    opacity: 1; /* Show the text on hover */
+}
+/* static/styles.css */
+
+/* Star shape */
+/*
+.star {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: solid gold; 
+    border-width: 0 5px 5px 5px; 
+    transform: rotate(120deg); 
+    animation: sparkle 2s ease infinite alternate; 
+}
+*/
+
+@keyframes sparkle {
+    from {
+        opacity: 1;
+        transform: translateY(0) rotate(45deg);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px) rotate(45deg);
+    }
+}
+
 
 /* Animations */
 @keyframes fadeInDown {
