@@ -15,6 +15,9 @@
     </header>
     <main>
         <p>With the help of our tool, anyone who wants to admire the intricacies of Tamil grammar can do so with ease. Our Tamil dataset continues to grow every day, as do our examples. Browse through our categories and choose one to get started!</p>
+    
+        <p>Our aim is to give elementary school students a more efficient and interesting learning experience. Our motto being, learning is fun!</p>
+
         <form id="categoryForm" action="/result" method="post">
             <label>Choose a category to practice:</label>
             <div class="button-container">
@@ -31,6 +34,9 @@
             </div>
             <div class="button-container">
                 <button type="button" onclick="submitForm('Pirithu')">பிரித்து எழுதுக</button>
+            </div>
+            <div class="button-container">
+                <button type="button" onclick="submitForm('Tenses')">காலங்கள்</button>
             </div>
             <input type="hidden" id="selectedOption" name="option">
         </form>
