@@ -4,50 +4,51 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Practice வார்த்தை வகை</title>
+        <title>Practice ஒருமை பன்மை</title>
         <link rel="stylesheet" type="text/css"
-            href="static/ran-word-result_style.css">
+            href="static/synonym_style.css">
     </head>
     <body>
 
         <header>
             <img id="logo" src="static/logotrans.png" alt="Profile Icon">
-            <h1>வார்த்தை வகை</h1>
+            <h1>ஒருமை பன்மை</h1>
             <img src="static/profileicon.png" alt="Profile Icon">
         </header>
         <main>
             <div id="categoryForm">
-               
 
                 <div style="padding-left: 4%;">
+
+                    <h1 style="text-align: left;">ஒருமை பன்மை</h1>
 
                     <p style="height: 20px;">
                         Choose the correct option:-
                     </p>
                     <br>
-                    <p>{{ result[0] }} - _______</p>
+                    <p>{{result[0]}} x ___________</p>
                     <p>
-                        <span class="special-word">a) {{result[3][0]}}</span> <span class="special-word">b) {{result[3][1]}}</span> <span class="special-word">c) {{result[3][2]}}</span>   <span class="special-word">d) {{result[3][3]}}</span>   
-                        <br>
-                        <span class="special-word">e) {{result[3][4]}}</span>   <span class="special-word">f) {{result[3][5]}}</span>     
+                        <span class="special-word">a) {{result[1]}}</span>  <span class="special-word">b) {{result[2]}}</span>  <span class="special-word">c) {{result[3]}}</span>  <span class="special-word">d) {{result[4]}}</span>
                     </p>
                     <br>
                     <p>
-                        Attempt identifying the <span class="typee" style="text-decoration: underline;">வார்த்தை வகை</span> before checking the
+                        Attempt identifying the  <span class="special-word" style="text-decoration: underline;">பன்மை</span> before
+                        checking the
                         answer
                     </p>
                     <br>
                     <button onclick="showText()">Check Answer</button>
                     <br>
                     <br>
-                    <p id="ans" class="hidden-answer"
-                        style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{result[0]}}
-                        - {{result[1]}}</p>
+                    <p id="ans"  class="hidden-answer"
+                        style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{
+                        result[0] }} x {{result[5]}}</p>
                     <br>
-        </div>
+                </div>
 
                 <div id="OtherOptionBox">
-                    <button id="newword" class="float-left submit-button" >New Word</button>
+                    <button id="newword" class="float-left submit-button">New
+                        Word</button>
                     <form id="returnhome" action="/home">
                         <button class="float-left submit-button">Return
                             Home</button>
@@ -74,6 +75,7 @@
         document.getElementById('newword').addEventListener('click', function() {
         window.location.reload();
     });
+    
     </script>
     </body>
 </html>

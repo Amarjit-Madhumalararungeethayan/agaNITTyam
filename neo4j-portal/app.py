@@ -84,7 +84,30 @@ def result():
             res.append(ans)
 
             return render_template('synonym-result.html', result=res)
-        
+
+    elif option == "Plural":
+        result = execute_notebook('plural.ipynb', 'plural.nbconvert.ipynb')
+        temp = synonym_gen(result)
+        if result is not None:
+            # Return the output to the clientr
+            res = temp.split('\\t')
+            options = [res[0]+"க்கள்", res[0]+"ங்கள்", res[0]+"டுகள்", res[0]+"ய்கள்", res[0]+"வர்கள்", res[0]+"ர்கள்", res[0]+"கல்", res[0]+"கழ்", res[0]+"எல்"]
+            random.shuffle(options)
+            options = options[0:3]
+            if temp in options:
+               options.remove(temp)
+               
+            for word in options:
+                res.append(word)
+
+            ans = res[1]
+            copy = res[1:]
+            random.shuffle(copy)
+            res[1:] = copy # overwrite the original
+            res.append(ans)
+
+            return render_template('plural-result.html', result=res)
+
     elif option == "Opposite":
             result = execute_notebook('opposite.ipynb', 'opposite.nbconvert.ipynb')
             temp = synonym_gen(result)
@@ -105,6 +128,14 @@ def result():
                 res.append(ans)
 
                 return render_template('opposite-result.html', result=res)
+            
+    elif option == "Pirithu":
+            result = execute_notebook('opposite.ipynb', 'pirithu.nbconvert.ipynb')
+            temp = synonym_gen(result)
+            if result is not None:
+                
+
+                return render_template('opposite-result.html', result=temp)
 
     else:
         return "Invalid option"

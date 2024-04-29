@@ -19,14 +19,24 @@
             <label>Choose a category to practice:</label>
             <div class="button-container">
                 <button type="button" onclick="submitForm('Vaarthai Vagai')">வார்த்தை வகை</button>
+            </div>
+            <div class="button-container">
                 <button type="button" onclick="submitForm('Synonym')">இணைப்பொருட்ச்சொல்</button>
+            </div>
+            <div class="button-container">
                 <button type="button" onclick="submitForm('Opposite')">எதிர்ச்சொல்</button>
+            </div>
+            <div class="button-container">
+                <button type="button" onclick="submitForm('Plural')">ஒருமை பன்மை</button>
+            </div>
+            <div class="button-container">
+                <button type="button" onclick="submitForm('Pirithu')">பிரித்து எழுதுக</button>
             </div>
             <input type="hidden" id="selectedOption" name="option">
         </form>
 
         <div class="image-container">
-            <img class="book-image" src="static/grammarbook.png" alt="Grammar Book">
+            <img class="book-image" src="static/grammarbook.png" alt="Grammar Book" style="visibility: hidden;">
             <div class="image-text">Happy Learning Tamil 🥳</div>
         </div>
     </main>
