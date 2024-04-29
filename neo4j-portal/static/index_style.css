@@ -5,6 +5,7 @@
 /* Font Family */
 body {
     font-family: 'Bubblegum Sans', cursive;
+    overflow: hidden;
 }
 
 /* Header Styles */
