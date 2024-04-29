@@ -40,7 +40,7 @@
                     <button onclick="showText()">Check Answer</button>
                     <br>
                     <br>
-                    <p id="ans"
+                    <p id="ans"  class="hidden-answer"
                         style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{
                         result[0] }} x {{result[5]}}</p>
                     <br>
@@ -64,6 +64,7 @@
         <script>
         function showText(){
             var ans = document.getElementById('ans');
+            ans.classList.add('show-answer');
             if(ans.style.visibility=="hidden"){
                 ans.style.visibility="visible";
             } else{

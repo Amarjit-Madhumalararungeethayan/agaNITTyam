@@ -130,6 +130,23 @@ button:hover {
     justify-content: space-around;
 }
 
+.hidden-answer {
+    visibility: hidden;
+    color: red;
+    width: fit-content;
+    border-style: dotted;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+    opacity: 0; /* initially hidden */
+    transition: opacity 0.5s ease; /* transition effect */
+}
+
+.show-answer {
+    visibility: visible !important; /* override visibility property */
+    opacity: 1; /* make visible */
+}
+
 #returnhome{
     margin-left: 20px;
 }
