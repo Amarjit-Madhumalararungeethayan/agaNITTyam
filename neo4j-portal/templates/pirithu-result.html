@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practice பிரித்து எழுதுக</title>
+        <link rel="stylesheet" type="text/css"
+            href="static/synonym_style.css">
+    </head>
+    <body>
+
+        <header>
+            <img id="logo" src="static/logotrans.png" alt="Profile Icon">
+            <h1>பிரித்து எழுதுக</h1>
+            <img src="static/profileicon.png" alt="Profile Icon">
+        </header>
+        <main>
+            <div id="categoryForm">
+
+                <div style="padding-left: 4%;">
+
+                    <h1 style="text-align: left;">பிரித்து எழுதுக</h1>
+
+                    <p style="height: 20px;">
+                        Choose the correct option:-
+                    </p>
+                    <br>
+                    <p>{{result[0]}} = ___________  +  ___________</p>
+                    <br>
+                    <p>
+                        Attempt identifying the  <span class="special-word" style="text-decoration: underline;">பிரித்து எழுதுக</span> before
+                        checking the
+                        answer
+                    </p>
+                    <br>
+                    <button onclick="showText()">Check Answer</button>
+                    <br>
+                    <br>
+                    <p id="ans"  class="hidden-answer"
+                        style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{
+                        result[0] }} = {{result[1]}} + {{result[2]}}</p>
+                    <br>
+                </div>
+
+                <div id="OtherOptionBox">
+                    <button id="newword" class="float-left submit-button">New
+                        Word</button>
+                    <form id="returnhome" action="/home">
+                        <button class="float-left submit-button">Return
+                            Home</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+        </footer>
+
+        <script>
+        function showText(){
+            var ans = document.getElementById('ans');
+            ans.classList.add('show-answer');
+            if(ans.style.visibility=="hidden"){
+                ans.style.visibility="visible";
+            } else{
+                ans.style.visibility="hidden"
+            }
+        }
+
+        document.getElementById('newword').addEventListener('click', function() {
+        window.location.reload();
+    });
+    
+    </script>
+    </body>
+</html>

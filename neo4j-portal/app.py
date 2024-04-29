@@ -130,12 +130,11 @@ def result():
                 return render_template('opposite-result.html', result=res)
             
     elif option == "Pirithu":
-            result = execute_notebook('opposite.ipynb', 'pirithu.nbconvert.ipynb')
+            result = execute_notebook('pirithu.ipynb', 'pirithu.nbconvert.ipynb')
             temp = synonym_gen(result)
-            if result is not None:
-                
-
-                return render_template('opposite-result.html', result=temp)
+            print(temp)
+            res = temp.split('\\t')
+            return render_template('pirithu-result.html', result=res)
 
     else:
         return "Invalid option"
