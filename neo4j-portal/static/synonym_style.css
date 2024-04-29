@@ -53,6 +53,10 @@ main {
 
 }
 
+span {
+    margin-right: 20px;
+}
+
 h1 {
     color: #fff;
     font-size: 2em;
@@ -76,6 +80,7 @@ footer {
 }
 
 #categoryForm {
+    width: 650px;
     margin-top: 50px;
     background-color: #fff;
     border-radius: 10px;

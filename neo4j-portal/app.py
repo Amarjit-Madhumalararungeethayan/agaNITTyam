@@ -3,9 +3,11 @@ from flask import Flask, render_template, request, redirect
 from flask_debugtoolbar import DebugToolbarExtension
 import subprocess
 import nbformat
+import random
 
 from helper_funtions.random_word_type import word_type_rand
 from helper_funtions.synonym import synonym_gen
+from helper_funtions.option_generator import choose_random_words
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 toolbar = DebugToolbarExtension(app)
@@ -49,6 +51,7 @@ def result():
     # option Type of Word
     if option == 'Vaarthai Vagai':
         types = ["இடப்பெயர்", "காலப்பெயர்", "சினைப்பெயர்", "தொழிற்பெயர்", "பொருட்பெயர்", "பண்புப்பெயர்"]
+        random.shuffle(types)
         result = execute_notebook('ran-word.ipynb', 'ran-word.nbconvert.ipynb')
         temp = word_type_rand(result)
         if result is not None:
@@ -67,6 +70,19 @@ def result():
         if result is not None:
             # Return the output to the clientr
             res = temp.split('\\t')
+            options = choose_random_words()
+            if temp in options:
+               options.remove(temp)
+            print(options)
+            for word in options:
+                res.append(word)
+
+            ans = res[1]
+            copy = res[1:]
+            random.shuffle(copy)
+            res[1:] = copy # overwrite the original
+            res.append(ans)
+
             return render_template('synonym-result.html', result=res)
 
     else:
