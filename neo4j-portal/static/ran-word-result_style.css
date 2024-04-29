@@ -63,6 +63,10 @@ h1 {
     /* Allow the text to take up remaining space */
 }
 
+span {
+    margin-right: 20px;
+}
+
 footer {
     position: fixed;
     left: 0;
