@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice வார்த்தை வகை</title>
-</head>
-<body>
-    <div style="padding-left: 4%;">
-        <h1 style="text-align: left;">வார்த்தை வகை</h1>
 
-        <p style="height: 20px;">
-            Choose the correct option:-
-        </p>
-        <br>
-        <p>{{ result[0] }} - _______</p>
-        <p>
-             a) {{result[3][0]}}  b) {{result[3][1]}}  c) {{result[3][2]}}   d) {{result[3][3]}}   e) {{result[3][4]}}   f) {{result[3][5]}}
-        </p>
-        <br>
-        <p>
-            Attempt identifying the வார்த்தை வகை before checking the answer
-        </p>
-        <br>
-        <button onclick="showText()">Check Answer</button>
-        <br>
-        <br>
-        <p id="ans" style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{result[0]}} - {{result[1]}}</p>
-        <br>
-        <div>
-            <button class="float-left submit-button">New Word</button>
-            <form action="/home">
-                <button class="float-left submit-button">Return Home</button>
-            </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practice வார்த்தை வகை</title>
+        <link rel="stylesheet" type="text/css"
+            href="static/ran-word-result_style.css">
+    </head>
+    <body>
+
+        <header>
+            <img id="logo" src="static/logotrans.png" alt="Profile Icon">
+            <h1>வார்த்தை வகை</h1>
+            <img src="static/profileicon.png" alt="Profile Icon">
+        </header>
+        <main>
+            <div id="categoryForm">
+               
+
+                <div style="padding-left: 4%;">
+
+                    <p style="height: 20px;">
+                        Choose the correct option:-
+                    </p>
+                    <br>
+                    <p>{{ result[0] }} - _______</p>
+                    <p>
+                        a) {{result[3][0]}} b) {{result[3][1]}} c)
+                        {{result[3][2]}} d)
+                        {{result[3][3]}} e) {{result[3][4]}} f) {{result[3][5]}}
+                    </p>
+                    <br>
+                    <p>
+                        Attempt identifying the வார்த்தை வகை before checking the
+                        answer
+                    </p>
+                    <br>
+                    <button onclick="showText()">Check Answer</button>
+                    <br>
+                    <br>
+                    <p id="ans"
+                        style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{result[0]}}
+                        - {{result[1]}}</p>
+                    <br>
         </div>
-    </div>
 
-    <script>
+                <div id="OtherOptionBox">
+                    <button id="newword" class="float-left submit-button" >New Word</button>
+                    <form id="returnhome" action="/home">
+                        <button class="float-left submit-button">Return
+                            Home</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+        </footer>
+
+        <script>
         function showText(){
             var ans = document.getElementById('ans');
             if(ans.style.visibility=="hidden"){
@@ -45,5 +70,5 @@
             }
         }
     </script>
-</body>
+    </body>
 </html>
