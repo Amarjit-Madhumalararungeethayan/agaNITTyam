@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practice எதிர்ச்சொல்</title>
+        <link rel="stylesheet" type="text/css"
+            href="static/synonym_style.css">
+    </head>
+    <body>
+
+        <header>
+            <img id="logo" src="static/logotrans.png" alt="Profile Icon">
+            <h1>எதிர்ச்சொல்</h1>
+            <img src="static/profileicon.png" alt="Profile Icon">
+        </header>
+        <main>
+            <div id="categoryForm">
+
+                <div style="padding-left: 4%;">
+
+                    <h1 style="text-align: left;">எதிர்ச்சொல் </h1>
+
+                    <p style="height: 20px;">
+                        Choose the correct option:-
+                    </p>
+                    <br>
+                    <p>{{result[0]}} x ___________</p>
+                    <p>
+                        <span class="special-word">a) {{result[1]}}</span>  <span class="special-word">b) {{result[2]}}</span>  <span class="special-word">c) {{result[3]}}</span>  <span class="special-word">d) {{result[4]}}</span>
+                    </p>
+                    <br>
+                    <p>
+                        Attempt identifying the  எதிர்ச்சொல்  before
+                        checking the
+                        answer
+                    </p>
+                    <br>
+                    <button onclick="showText()">Check Answer</button>
+                    <br>
+                    <br>
+                    <p id="ans"
+                        style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{
+                        result[0] }} x {{result[5]}}</p>
+                    <br>
+                </div>
+
+                <div id="OtherOptionBox">
+                    <button id="newword" class="float-left submit-button">New
+                        Word</button>
+                    <form id="returnhome" action="/home">
+                        <button class="float-left submit-button">Return
+                            Home</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+        </footer>
+
+        <script>
+        function showText(){
+            var ans = document.getElementById('ans');
+            if(ans.style.visibility=="hidden"){
+                ans.style.visibility="visible";
+            } else{
+                ans.style.visibility="hidden"
+            }
+        }
+
+        document.getElementById('newword').addEventListener('click', function() {
+        window.location.reload();
+    });
+    
+    </script>
+    </body>
+</html>

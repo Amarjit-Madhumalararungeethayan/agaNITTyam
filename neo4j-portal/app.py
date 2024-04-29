@@ -84,6 +84,27 @@ def result():
             res.append(ans)
 
             return render_template('synonym-result.html', result=res)
+        
+    elif option == "Opposite":
+            result = execute_notebook('opposite.ipynb', 'opposite.nbconvert.ipynb')
+            temp = synonym_gen(result)
+            if result is not None:
+                # Return the output to the clientr
+                res = temp.split('\\t')
+                options = choose_random_words()
+                if temp in options:
+                    options.remove(temp)
+                print(options)
+                for word in options:
+                    res.append(word)
+
+                ans = res[1]
+                copy = res[1:]
+                random.shuffle(copy)
+                res[1:] = copy # overwrite the original
+                res.append(ans)
+
+                return render_template('opposite-result.html', result=res)
 
     else:
         return "Invalid option"
