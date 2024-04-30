@@ -77,14 +77,14 @@ p {
 
 /* Form Styles */
 form {
-    margin-top: 40px;
+    margin-top: 30px;
     background-color: #fff;
     border-radius: 10px;
-    max-height: 500px;
+    max-height: 250px;
     overflow-y: auto;
     overflow-x: hidden;
     box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.3);
-    padding: 20px;
+    padding: 40px;
 }
 
 .button-container {
@@ -92,6 +92,10 @@ form {
     justify-content: space-between;
     margin-top: 20px;
     /* Add margin-top to increase the gap */
+}
+
+.kg-container {
+    justify-content: space-between;
 }
 
 button {
@@ -128,10 +132,11 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 50px;
+    height: 35px;
     background-color: #ff69b4;
     color: #fff;
-    text-align: center;
+    text-align:center;
+    vertical-align:auto;
     padding: 10px 0;
     animation: slideInUp 1s ease;
 }
