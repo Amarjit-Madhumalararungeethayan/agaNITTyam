@@ -82,7 +82,7 @@ footer {
 
 #categoryForm {
     width: 650px;
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.3);
@@ -139,6 +139,34 @@ button:hover {
 .show-answer {
     visibility: visible !important; /* override visibility property */
     opacity: 1; /* make visible */
+}
+
+.draggable {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f7b3ee;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.draggable:hover {
+    transform: translateY(-2px);
+}
+
+/* Adjust styles for dragged state */
+.draggable:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* Adjust styles for dropped state */
+.dropped {
+    background-color: #c0c0c0;
+    border-color: #999;
 }
 
 #OtherOptionBox {

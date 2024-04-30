@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practice காலங்கள்</title>
+        <link rel="stylesheet" type="text/css"
+            href="static/synonym_style.css">
+    </head>
+    <body>
+
+        <header>
+            <img id="logo" src="static/logotrans.png" alt="Profile Icon">
+            <h1>காலங்கள்</h1>
+            <img src="static/profileicon.png" alt="Profile Icon">
+        </header>
+        <main>
+            <div id="categoryForm">
+
+                <div style="padding-left: 4%;">
+
+                    <h1 style="text-align: left;">காலங்கள்</h1>
+
+                    <p style="height: 20px;">
+                        Drag and sort in the right order:-
+                    </p>
+                    <br>
+                    <div id="options">
+                        <button class="draggable" id="option1">{{result[3]}}</button>
+                        <button class="draggable" id="option2">{{result[4]}}</button>
+                        <button class="draggable" id="option3">{{result[5]}}</button>
+                    </div>
+                    <br>
+                    <p>
+                        Attempt sorting the  <span class="special-word" style="text-decoration: underline;">காலங்கள்</span> before
+                        checking the
+                        answer. Drag to sort the options <br> <br>(இறந்த காலம் - நிகழ்காலம் - எதிர் காலம்)
+                    </p>
+                    <br>
+                    <button onclick="showText()">Check Answer</button>
+                    <br>
+                    <br>
+                    <p id="ans"  class="hidden-answer"
+                        style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">
+                        {{result[0] }} - {{result[1]}} - {{result[2]}}</p>
+                    <br>
+                </div>
+
+                <div id="OtherOptionBox">
+                    <button id="newword" class="float-left submit-button">New
+                        Word</button>
+                    <form id="returnhome" action="/home">
+                        <button class="float-left submit-button">Return
+                            Home</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+        </footer>
+
+        <script>
+        function showText(){
+            var ans = document.getElementById('ans');
+            ans.classList.add('show-answer');
+            if(ans.style.visibility=="hidden"){
+                ans.style.visibility="visible";
+            } else{
+                ans.style.visibility="hidden"
+            }
+        }
+
+        document.getElementById('newword').addEventListener('click', function() {
+        window.location.reload();
+    });
+
+    var buttons = document.querySelectorAll('.draggable');
+        buttons.forEach(function (button) {
+            button.draggable = true;
+            button.addEventListener('dragstart', function (e) {
+                e.dataTransfer.setData('text/plain', button.id);
+            });
+        });
+
+        // Make container droppable
+        var container = document.getElementById('options');
+        container.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        });
+        container.addEventListener('drop', function (e) {
+            e.preventDefault();
+            var buttonId = e.dataTransfer.getData('text/plain');
+            var button = document.getElementById(buttonId);
+            container.appendChild(button);
+        });
+    
+    </script>
+    </body>
+</html>

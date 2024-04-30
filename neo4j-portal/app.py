@@ -135,6 +135,22 @@ def result():
             print(temp)
             res = temp.split('\\t')
             return render_template('pirithu-result.html', result=res)
+    
+    elif option == "Tenses":
+            #result = execute_notebook('tenses.ipynb', 'tenses.nbconvert.ipynb')
+            #temp = synonym_gen(result)
+            #print(temp)
+            #res = temp.split('\\t')
+            res = ["வந்தேன்", "வருகிறேன்", "வருவேன்"]
+            print(res)
+
+            options = res[0:3]
+            random.shuffle(options)
+            
+            for word in options:
+                res.append(word)
+
+            return render_template('tenses-result.html', result=res)
 
     else:
         return "Invalid option"
