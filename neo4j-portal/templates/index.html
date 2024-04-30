@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>agaNITTyam</title>
     <link rel="stylesheet" type="text/css" href="static/index_style.css">
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
 </head>
 <body>
     <div class="star"></div>
@@ -57,6 +58,11 @@
             document.getElementById('selectedOption').value = option;
             document.getElementById('categoryForm').submit();
         }
+
+        window.addEventListener("load", (event) => {
+        new cursoreffects.fairyDustCursor();
+    });
+
     </script>
     <script src="static/wand.js"></script>
 </body>

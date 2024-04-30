@@ -7,6 +7,7 @@
     <title>Tamil Knowledge Graph</title>
     <link rel="stylesheet" type="text/css" href="static/synonym_style.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
 </head>
 
 <body>
@@ -35,6 +36,10 @@
     </footer>
 
     <script>
+
+window.addEventListener("load", (event) => {
+        new cursoreffects.fairyDustCursor();
+    });
 
         document.getElementById('newword').addEventListener('click', function() {
         window.location.reload();

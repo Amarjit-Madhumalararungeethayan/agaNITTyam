@@ -7,6 +7,7 @@
         <title>Practice பிரித்து எழுதுக</title>
         <link rel="stylesheet" type="text/css"
             href="static/synonym_style.css">
+            <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
     </head>
     <body>
 
@@ -59,6 +60,10 @@
         </footer>
 
         <script>
+            window.addEventListener("load", (event) => {
+        new cursoreffects.fairyDustCursor();
+    });
+    
         function showText(){
             var ans = document.getElementById('ans');
             ans.classList.add('show-answer');

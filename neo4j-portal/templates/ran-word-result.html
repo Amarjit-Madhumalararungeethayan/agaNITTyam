@@ -7,6 +7,7 @@
         <title>Practice வார்த்தை வகை</title>
         <link rel="stylesheet" type="text/css"
             href="static/ran-word-result_style.css">
+            <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
     </head>
     <body>
 
@@ -61,6 +62,10 @@
         </footer>
 
         <script>
+            window.addEventListener("load", (event) => {
+        new cursoreffects.fairyDustCursor();
+    });
+    
         function showText(){
             var ans = document.getElementById('ans');
             ans.classList.add('show-answer');
