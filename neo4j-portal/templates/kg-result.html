@@ -17,13 +17,28 @@
     </header>
     <main>
         <div id="graph"></div>
-        <input type="hidden" id="result" value="{{ result | safe }}">
+        <input id="result" value="{{ result | safe }}">
+        <br>
+        <br>
+        <div id="OtherOptionBox">
+            <button id="newword" class="float-left submit-button">New
+                Word</button>
+            <form id="returnhome" action="/home">
+                <button class="float-left submit-button">Return
+                    Home</button>
+            </form>
+        </div>
+
     </main>
     <footer>
         <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
     </footer>
 
     <script>
+
+        document.getElementById('newword').addEventListener('click', function() {
+        window.location.reload();
+    });
         var res = document.getElementById('result').value;
         var circleRadius = 50; // Define the radius of the circle
         var fontSize = Math.min(2 * circleRadius, 24); // Adjust the maximum font size as needed

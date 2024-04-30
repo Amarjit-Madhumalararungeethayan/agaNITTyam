@@ -8,6 +8,7 @@ import random
 from helper_funtions.random_word_type import word_type_rand
 from helper_funtions.synonym import synonym_gen
 from helper_funtions.option_generator import choose_random_words
+from helper_funtions.kg_extract import extract_main_tamil_word
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 toolbar = DebugToolbarExtension(app)
@@ -153,10 +154,10 @@ def result():
             return render_template('tenses-result.html', result=res)
     
     elif option == "KG":
-            result = execute_notebook('ran-word.ipynb', 'ran-word.nbconvert.ipynb')
-            temp = synonym_gen(result)
+            result = execute_notebook('kg-head.ipynb', 'kg-head.nbconvert.ipynb')
+            print(result)
 
-            return render_template('kg-result.html', result=temp)
+            return render_template('kg-result.html', result=result)
 
     else:
         return "Invalid option"
