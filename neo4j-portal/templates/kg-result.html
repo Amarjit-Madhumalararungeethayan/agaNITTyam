@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Test your Grammar</title>
-        <link rel="stylesheet" type="text/css"
-            href="static/synonym_style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Knowledge Graph</title>
+    <link rel="stylesheet" type="text/css" href="static/synonym_style.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
 
-        <header>
-            <img id="logo" src="static/logotrans.png" alt="Profile Icon">
-            <h1>Tamil Knowledge Graph</h1>
-            <img src="static/profileicon.png" alt="Profile Icon">
-        </header>
-        <main>
-            
-            
+<body>
+    <header>
+        <img id="logo" src="static/logotrans.png" alt="Profile Icon">
+        <h1>Tamil Knowledge Graph</h1>
+        <img src="static/profileicon.png" alt="Profile Icon">
+    </header>
+    <main>
+        <div id="graph"></div>
+        <input type="hidden" id="result" value="{{ result | safe }}">
+    </main>
+    <footer>
+        <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+    </footer>
 
-        </main>
-        <footer>
-            <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
-        </footer>
-    </body>
+    <script>
+        var res = document.getElementById('result').value;
+        var circleRadius = 50; // Define the radius of the circle
+        var fontSize = Math.min(2 * circleRadius, 24); // Adjust the maximum font size as needed
+
+        // Create a new graph
+        var svg = d3.select("#graph")
+            .append("svg")
+            .attr("width", 400)
+            .attr("height", 200);
+
+        // Add the circle
+        svg.append("circle")
+            .attr("cx", 300)
+            .attr("cy", 100)
+            .attr("r", circleRadius)
+            .attr("fill", "#f7b3ee");
+
+        // Add the text
+        svg.append("text")
+            .attr("x", 300)
+            .attr("y", 100)
+            .attr("dy", ".35em")
+            .attr("text-anchor", "middle")
+            .attr("font-size", fontSize) // Set the font size dynamically
+            .text(res);
+    </script>
+</body>
+
 </html>
