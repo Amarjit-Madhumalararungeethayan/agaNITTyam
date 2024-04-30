@@ -156,7 +156,6 @@ button:hover {
 .draggable:hover {
     transform: translateY(-2px);
 }
-
 /* Adjust styles for dragged state */
 .draggable:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);

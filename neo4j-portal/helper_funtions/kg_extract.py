@@ -1,8 +1,10 @@
-def extract_main_tamil_word(output):
-    # Extracting the dictionary from the list
-    dictionary = output[0]
-    # Extracting the value of 'text' key from the dictionary
-    text = dictionary.get('text', '')
-    # Extracting the main Tamil word from the 'text' value
-    main_word = text.split("'")[1] if "'" in text else None
-    return main_word
+import re
+
+def extract_tamil_words(input_string):
+    # Define regex pattern for Tamil words
+    tamil_pattern = re.compile(r'[அ-ஹ]+')
+
+    # Find all matches in the input string
+    tamil_words = tamil_pattern.findall(input_string)
+
+    return tamil_words
