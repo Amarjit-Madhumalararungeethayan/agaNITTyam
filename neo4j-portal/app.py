@@ -28,7 +28,7 @@ def execute_notebook(notebook_filename, temp):
         return None
     
     # Read the notebook content after execution
-    with open(temp, 'r') as f:
+    with open(temp, 'r', encoding="utf-8") as f:
         notebook_content = nbformat.read(f, as_version=4)
 
     # Extract output from cells with the specified tag

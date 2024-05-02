@@ -13,7 +13,7 @@ header {
     left: 0;
     top: 0;
     width: 100%;
-    background-color: #ff69b4;
+    background-color: #00aeff;
     padding: 20px 0;
     display: flex;
     /* Add flexbox */
@@ -74,7 +74,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #ff69b4;
+    background-color: #00aeff;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -98,7 +98,7 @@ footer {
 }
 
 button {
-    background-color: #ff69b4;
+    background-color: #00aeff;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -111,6 +111,7 @@ button {
     /* Decrease font size */
     font-family: 'Bubblegum Sans', cursive;
     /* Apply Bubblegum Sans font */
+    margin: 5px
 }
 
 button:last-child {
@@ -119,14 +120,14 @@ button:last-child {
 
 button:hover {
     background-color: #fff;
-    color: #ff69b4;
+    color: #00aeff;
     border: 1px solid rgb(172, 172, 172);
     /* Add black border */
     transform: scale(1.1);
 }
 
 #OtherOptionBox {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -139,17 +140,29 @@ button:hover {
     border-color: black;
     border-width: 1px;
     padding: 10px;
-    opacity: 0; /* initially hidden */
-    transition: opacity 0.5s ease; /* transition effect */
+    opacity: 0;
+    /* initially hidden */
+    transition: opacity 0.5s ease;
+    /* transition effect */
 }
 
 .show-answer {
-    visibility: visible !important; /* override visibility property */
-    opacity: 1; /* make visible */
+    visibility: visible !important;
+    /* override visibility property */
+    opacity: 1;
+    /* make visible */
 }
 
-#returnhome{
+#returnhome {
     margin-left: 20px;
+}
+
+.correct {
+    background-color: rgb(49, 206, 49);
+}
+
+.wrong {
+    background-color: rgb(220, 38, 38);
 }
 
 /* Animations */

@@ -24,20 +24,21 @@
                     <h1 style="text-align: left;">காலங்கள்</h1>
 
                     <p style="height: 20px;">
-                        Drag and sort in the right order:-
+                        சரியான வரிசையில் இழுத்து வரிசைப்படுத்தவும்:-
                     </p>
                     <br>
+                    <p>
+                        <span class="typee"
+                            style="text-decoration: underline;">(இறந்த காலம் - நிகழ்காலம் - எதிர் காலம்)
+                            : </span>
+                    </p>
                     <div id="options">
                         <button class="draggable" id="option1">{{result[3]}}</button>
                         <button class="draggable" id="option2">{{result[4]}}</button>
                         <button class="draggable" id="option3">{{result[5]}}</button>
                     </div>
                     <br>
-                    <p>
-                        Attempt sorting the  <span class="special-word" style="text-decoration: underline;">காலங்கள்</span> before
-                        checking the
-                        answer. Drag to sort the options <br> <br>(இறந்த காலம் - நிகழ்காலம் - எதிர் காலம்)
-                    </p>
+                    
                     <br>
                     <button onclick="showText()">Check Answer</button>
                     <br>
@@ -49,11 +50,10 @@
                 </div>
 
                 <div id="OtherOptionBox">
-                    <button id="newword" class="float-left submit-button">New
-                        Word</button>
+                    <button id="newword" class="float-left submit-button">அடுத்த
+                        எடுத்துக்காட்டு</button>
                     <form id="returnhome" action="/home">
-                        <button class="float-left submit-button">Return
-                            Home</button>
+                        <button class="float-left submit-button">முகப்பு பக்கம்</button>
                     </form>
                 </div>
             </div>

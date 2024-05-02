@@ -6,7 +6,7 @@ def choose_random_words():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(base_dir, '..', 'static', 'AllTamilWords.txt')
 
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding="utf-8") as file:
         words = file.read().split()
 
     # Remove duplicates and convert to lowercase
