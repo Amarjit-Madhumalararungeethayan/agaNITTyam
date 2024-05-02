@@ -111,6 +111,7 @@ button {
     /* Decrease font size */
     font-family: 'Bubblegum Sans', cursive;
     /* Apply Bubblegum Sans font */
+    margin:5px
 }
 
 button:last-child {
@@ -151,7 +152,13 @@ button:hover {
 #returnhome{
     margin-left: 20px;
 }
+.correct{
+    background-color: rgb(6, 223, 6);
+}
+.wrong{
+    background-color: rgb(255, 48, 48);
 
+}
 /* Animations */
 @keyframes fadeInDown {
     from {
