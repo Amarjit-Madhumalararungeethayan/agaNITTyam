@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +11,21 @@
     <div class="star"></div>
     <header>
         <img id="logo" src="static/logotrans.png" alt="Profile Icon">
-        <h1>அகNITTயத்திற்கு வரவேற்கிறோம்</h1>
+        <h1 id="1">அகNITTயத்திற்கு வரவேற்கிறோம்</h1>
         <img src="static/profileicon.png" alt="Profile Icon">
     </header>
     <main>
-        <p style = "font-size: 14px;">தமிழ் இலக்கணத்தின் நுணுக்கங்களை ரசிக்க விரும்பும் யார் வேண்டுமானாலும், எங்கள் கருவியின் உதவியுடன் எளிதாக செய்ய முடியும். எங்கள் தமிழ் தரவுத்தொகுப்பு ஒவ்வொரு நாளும் வளர்ந்து வருகிறது, எங்கள் எடுத்துக்காட்டுகளும் வளர்ந்து வருகின்றன. எங்கள் பிரிவுகளை உலாவியுங்கள், தொடங்குவதற்கு ஒன்றைத் தேர்ந்தெடுங்கள்!</p>
+        <div onclick="switchToEnglish()" class="top-right">
+            <p id="ee"  style="font-size: 15px;"> View in English </p>
+        </div>
+        
+
+        <p id="2" style = "font-size: 14px;">தமிழ் இலக்கணத்தின் நுணுக்கங்களை ரசிக்க விரும்பும் யார் வேண்டுமானாலும், எங்கள் கருவியின் உதவியுடன் எளிதாக செய்ய முடியும். எங்கள் தமிழ் தரவுத்தொகுப்பு ஒவ்வொரு நாளும் வளர்ந்து வருகிறது, எங்கள் எடுத்துக்காட்டுகளும் வளர்ந்து வருகின்றன. எங்கள் பிரிவுகளை உலாவியுங்கள், தொடங்குவதற்கு ஒன்றைத் தேர்ந்தெடுங்கள்!</p>
     
-        <p style = "font-size: 14px;">எங்கள் நோக்கம், தொடக்கப்பள்ளி மாணவர்களுக்கு மிகவும் திறமையான மற்றும் சுவாரசியமான கற்றல் அனுபவத்தை வழங்குவதாகும். கற்றல் என்பது சுவாரசியம்! என்பதே எங்கள் முழக்கமாகும்.</p>
+        <p id="3" style = "font-size: 14px;">எங்கள் நோக்கம், தொடக்கப்பள்ளி மாணவர்களுக்கு மிகவும் திறமையான மற்றும் சுவாரசியமான கற்றல் அனுபவத்தை வழங்குவதாகும். கற்றல் என்பது சுவாரசியம்! என்பதே எங்கள் முழக்கமாகும்.</p>
 
         <form id="categoryForm" action="/result" method="post">
-            <label>பயிற்சி செய்ய வகையைத் தேர்ந்தெடுக்கவும்:</label>
+            <label id="4">பயிற்சி செய்ய வகையைத் தேர்ந்தெடுக்கவும்:</label>
             <div class = "total-buttons">
             <div class="button-container">
                 <button type="button" onclick="submitForm('Vaarthai Vagai')">வார்த்தை வகை</button>
@@ -57,6 +62,19 @@
         function submitForm(option) {
             document.getElementById('selectedOption').value = option;
             document.getElementById('categoryForm').submit();
+        }
+
+        function switchToEnglish(){
+            
+            if(document.getElementById("ee").textContent == "தமிழில் பார்க்கவும்"){
+                window.location.reload();
+            }else{
+                document.getElementById("1").textContent = "Welcome to agaNITTyam";
+                document.getElementById("2").textContent = "With the help of our tool, anyone who wants to admire the intricacies of Tamil grammar can do so with ease. Our Tamil dataset continues to grow every day, as do our examples. Browse through our categories and choose one to get started!";
+                document.getElementById("3").textContent = "Our aim is to give elementary school students a more efficient and interesting learning experience. Our motto being, learning is fun!";
+                document.getElementById("4").textContent = "Choose a category to practice:";
+                document.getElementById("ee").textContent = "தமிழில் பார்க்கவும்";
+            }
         }
 
         window.addEventListener("load", (event) => {
