@@ -18,9 +18,9 @@
     </header>
     <main>
         <div id="graph"></div>
-        <p>{{result}}</p>>
+        <p id="result">{{result}}</p>
         <br>
-        <img style="width: 650px; height: 300px; margin-bottom: 20px;" src="static/examplekg.png" alt="Profile Icon">
+        <img style="width: 650px; height: 300px; margin-bottom: 20px;" src="static/examplekg.png" alt="Knowledge Graph Example">
         <br>
         <div id="OtherOptionBox">
             <form id="newwordForm" action="/result" method="post">
@@ -32,19 +32,17 @@
                     Home</button>
             </form>
         </div>
-
     </main>
     <footer>
         <p>Made with 🤍 by <a href="https://www.linkedin.com/in/amarjit-madhumalararungeethayan-7305941bb/" style="text-decoration: none;">Amarjit</a>, <a href="https://www.linkedin.com/in/dharanish-rahul-1b0774225/" style="text-decoration: none;">Dharanish</a>, <a href="https://www.linkedin.com/in/mithmusq3/" style="text-decoration: none;">Mithilesh</a></p>
     </footer>
 
     <script>
+        window.addEventListener("load", () => {
+            new cursoreffects.fairyDustCursor();
+        });
 
-window.addEventListener("load", (event) => {
-        new cursoreffects.fairyDustCursor();
-    });
-    
-        var res = document.getElementById('result').value;
+        var res = document.getElementById('result').innerText; // Getting result text
         var circleRadius = 50; // Define the radius of the circle
         var fontSize = Math.min(2 * circleRadius, 24); // Adjust the maximum font size as needed
 
