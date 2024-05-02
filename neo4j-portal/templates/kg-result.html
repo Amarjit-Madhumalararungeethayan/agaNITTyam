@@ -23,8 +23,10 @@
         <img style="width: 650px; height: 300px; margin-bottom: 20px;" src="static/examplekg.png" alt="Profile Icon">
         <br>
         <div id="OtherOptionBox">
-            <button id="newword" class="float-left submit-button">New
-                Word</button>
+            <form id="newwordForm" action="/result" method="post">
+                <input type="hidden" name="option" value="KG">
+                <button type="submit" class="float-left submit-button">அடுத்த எடுத்துக்காட்டு</button>
+            </form>
             <form id="returnhome" action="/home">
                 <button class="float-left submit-button">Return
                     Home</button>
@@ -33,7 +35,7 @@
 
     </main>
     <footer>
-        <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+        <p>Made with 🤍 by <a href="https://www.linkedin.com/in/amarjit-madhumalararungeethayan-7305941bb/" style="text-decoration: none;">Amarjit</a>, <a href="https://www.linkedin.com/in/dharanish-rahul-1b0774225/" style="text-decoration: none;">Dharanish</a>, <a href="https://www.linkedin.com/in/mithmusq3/" style="text-decoration: none;">Mithilesh</a></p>
     </footer>
 
     <script>
@@ -41,10 +43,7 @@
 window.addEventListener("load", (event) => {
         new cursoreffects.fairyDustCursor();
     });
-
-        document.getElementById('newword').addEventListener('click', function() {
-        window.location.reload();
-    });
+    
         var res = document.getElementById('result').value;
         var circleRadius = 50; // Define the radius of the circle
         var fontSize = Math.min(2 * circleRadius, 24); // Adjust the maximum font size as needed

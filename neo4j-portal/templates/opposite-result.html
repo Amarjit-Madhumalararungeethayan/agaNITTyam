@@ -43,8 +43,10 @@
                         style="visibility: hidden;margin: 0px; padding: 0px;">{{result[5]}}</p>
 
                 <div id="OtherOptionBox">
-                    <button id="newword" class="float-left submit-button">அடுத்த
-                        எடுத்துக்காட்டு</button>
+                    <form id="newwordForm" action="/result" method="post">
+                        <input type="hidden" name="option" value="Opposite">
+                        <button type="submit" class="float-left submit-button">அடுத்த எடுத்துக்காட்டு</button>
+                    </form>
                     <form id="returnhome" action="/home">
                         <button class="float-left submit-button">முகப்பு பக்கம்</button>
                     </form>
@@ -53,7 +55,7 @@
 
         </main>
         <footer>
-            <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+            <p>Made with 🤍 by <a href="https://www.linkedin.com/in/amarjit-madhumalararungeethayan-7305941bb/" style="text-decoration: none;">Amarjit</a>, <a href="https://www.linkedin.com/in/dharanish-rahul-1b0774225/" style="text-decoration: none;">Dharanish</a>, <a href="https://www.linkedin.com/in/mithmusq3/" style="text-decoration: none;">Mithilesh</a></p>
         </footer>
 
         <script>
@@ -80,9 +82,6 @@ buttons.forEach(button => {
   });
 });
 
-        document.getElementById('newword').addEventListener('click', function() {
-        window.location.reload();
-    });
     
     </script>
     </body>

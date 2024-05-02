@@ -14,6 +14,7 @@ header {
     top: 0;
     width: 100%;
     background-color: #ffe6b6;
+    color: black;
     padding: 20px 0;
     display: flex;
     /* Add flexbox */
@@ -59,7 +60,7 @@ span {
 }
 
 h1 {
-    color: #fff;
+    color: black;
     font-size: 2em;
     margin: 0;
     text-align: center;
@@ -98,7 +99,7 @@ footer {
 
 button {
     background-color: #ffe6b6;
-    color: #fff;
+    color: black;
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
