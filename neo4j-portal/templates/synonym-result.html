@@ -7,7 +7,8 @@
         <title>Practice இணைப்பொருட்ச்சொல்</title>
         <link rel="stylesheet" type="text/css"
             href="static/synonym_style.css">
-            <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+        <script
+            src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
     </head>
     <body>
 
@@ -20,67 +21,69 @@
             <div id="categoryForm">
 
                 <div style="padding-left: 4%;">
-
-                    <h1 style="text-align: left;">இணைப்பொருட்ச்சொல் </h1>
-
                     <p style="height: 20px;">
-                        Choose the correct option:-
+                        சரியான விடையைத் தேர்ந்தெடுங்கள்:-
                     </p>
                     <br>
+                    <p>
+                        <span class="typee"
+                            style="text-decoration: underline;">இணைப்பொருட்ச்சொல்
+                            : </span>
+                    </p>
                     <p>{{result[0]}} x ___________</p>
                     <p>
-                        <span class="special-word">a) {{result[1]}}</span>  <span class="special-word">b) {{result[2]}}</span>  <span class="special-word">c) {{result[3]}}</span>  <span class="special-word">d) {{result[4]}}</span>
+                        <button class="special-word">{{result[1]}}</button> <button
+                            class="special-word">{{result[2]}}</button> <button
+                            class="special-word">{{result[3]}}</button> <button
+                            class="special-word">{{result[4]}}</button>
                     </p>
                     <br>
-                    <p>
-                        Attempt identifying the  <span class="special-word" style="text-decoration: underline;">இணைப்பொருட்ச்சொல்</span>  before
-                        checking the
-                        answer
-                    </p>
-                    <br>
-                    <button onclick="showText()">Check Answer</button>
-                    <br>
-                    <br>
-                    <p id="ans" class="hidden-answer"
-                        style="visibility:hidden; color: red; width: fit-content; border-style: dotted; border-color: black; border-width: 1px; padding: 10px;">{{
-                        result[0] }} x {{result[5]}}</p>
-                    <br>
+                    <p id="answer"
+                        style="visibility: hidden;margin: 0px; padding: 0px;">{{result[5]}}</p>
+
+                    <div id="OtherOptionBox">
+                        <button id="newword"
+                            class="float-left submit-button">அடுத்த
+                            எடுத்துக்காட்டு</button>
+                        <form id="returnhome" action="/home">
+                            <button class="float-left submit-button">முகப்பு
+                                பக்கம்</button>
+                        </form>
+                    </div>
                 </div>
 
-                <div id="OtherOptionBox">
-                    <button id="newword" class="float-left submit-button">New
-                        Word</button>
-                    <form id="returnhome" action="/home">
-                        <button class="float-left submit-button">Return
-                            Home</button>
-                    </form>
-                </div>
-            </div>
+            </main>
+            <footer>
+                <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
+            </footer>
 
-        </main>
-        <footer>
-            <p>Made with 🤍 by Amarjit, Dharanish, Mithilesh</p>
-        </footer>
-
-        <script>
+            <script>
             window.addEventListener("load", (event) => {
         new cursoreffects.fairyDustCursor();
     });
     
-        function showText(){
-            var ans = document.getElementById('ans');
-            ans.classList.add('show-answer');
-            if(ans.style.visibility=="hidden"){
-                ans.style.visibility="visible";
-            } else{
-                ans.style.visibility="hidden"
-            }
-        }
+    const buttons = document.querySelectorAll(".special-word"); // Select all buttons with class "special-word"
 
+buttons.forEach(button => {
+  button.addEventListener("click", function() {
+    var option = button.textContent;
+ var answer= document.getElementById('answer').textContent;
+    console.log(option);
+    console.log(answer);
+    console.log(option==answer);
+    console.log((option).localeCompare(answer))
+    if (answer.includes(option)) {
+      button.classList.add("correct"); // Add green background for selected button (using CSS)
+    } else {
+      button.classList.add("wrong"); // Add green background for selected button (using CSS)
+
+    }
+  });
+});
         document.getElementById('newword').addEventListener('click', function() {
         window.location.reload();
     });
     
     </script>
-    </body>
-</html>
+        </body>
+    </html>

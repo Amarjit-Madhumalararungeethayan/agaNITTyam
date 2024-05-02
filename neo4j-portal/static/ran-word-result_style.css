@@ -153,12 +153,12 @@ button:hover {
     margin-left: 20px;
 }
 .correct{
-    background-color: rgb(6, 223, 6);
+    background-color: rgb(49, 206, 49);
 }
 .wrong{
-    background-color: rgb(255, 48, 48);
-
+    background-color: rgb(220, 38, 38);
 }
+
 /* Animations */
 @keyframes fadeInDown {
     from {
