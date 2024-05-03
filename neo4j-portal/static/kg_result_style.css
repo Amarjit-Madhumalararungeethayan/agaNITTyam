@@ -1,0 +1,229 @@
+/* index_style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+/* Font Family */
+body {
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #ffe6b6;
+    color: black;
+    padding: 20px 0;
+    display: flex;
+    /* Add flexbox */
+    justify-content: space-between;
+    /* Align items horizontally */
+    align-items: center;
+    /* Align items vertically */
+    z-index: 999;
+    /* Ensure the header is above other content */
+}
+
+img {
+    width: 50px;
+    /* Adjust size as needed */
+    height: auto;
+    /* Optional: Make the icon circular */
+    animation: fadeInDown 1s ease;
+    margin-right: 30px;
+    /* Add margin to separate the icon from text */
+}
+
+
+main {
+    max-width: 600px;
+    margin: 110px auto 80px;
+    /* Adjust top margin to center content vertically */
+    padding: 20px;
+    animation: fadeIn 1s ease;
+}
+
+#logo {
+    width: 100px;
+    animation: fadeInDown 1s ease;
+    border-radius: 0%;
+    margin-left: 20px;
+
+
+}
+
+span {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+h1 {
+    color: black;
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+    /* Center align the text */
+    flex-grow: 1;
+    /* Allow the text to take up remaining space */
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffe6b6;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    animation: slideInUp 1s ease;
+}
+
+#categoryForm {
+    width: 650px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* Add margin-top to increase the gap */
+}
+
+button {
+    background-color: #ffe6b6;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 1;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
+    /* Decrease font size */
+    font-family: 'Bubblegum Sans', cursive;
+    /* Apply Bubblegum Sans font */
+    margin: 5px
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #ffe6b6;
+    border: 1px solid rgb(172, 172, 172);
+    /* Add black border */
+    transform: scale(1.1);
+}
+
+.hidden-answer {
+    visibility: hidden;
+    color: red;
+    width: fit-content;
+    border-style: dotted;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px;
+    opacity: 0;
+    /* initially hidden */
+    transition: opacity 0.5s ease;
+    /* transition effect */
+}
+
+.show-answer {
+    visibility: visible !important;
+    /* override visibility property */
+    opacity: 1;
+    /* make visible */
+}
+
+.draggable {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #42a7d6;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.draggable:hover {
+    transform: translateY(-2px);
+}
+
+/* Adjust styles for dragged state */
+.draggable:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* Adjust styles for dropped state */
+.dropped {
+    background-color: #c0c0c0;
+    border-color: #999;
+}
+
+#OtherOptionBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#returnhome {
+    margin-left: 20px;
+}
+
+.correct {
+    background-color: rgb(49, 206, 49);
+}
+
+.wrong {
+    background-color: rgb(220, 38, 38);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

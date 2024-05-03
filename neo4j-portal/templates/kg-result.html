@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tamil Knowledge Graph</title>
-    <link rel="stylesheet" type="text/css" href="static/synonym_style.css">
+    <link rel="stylesheet" type="text/css" href="static/kg_result_style.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
 </head>
@@ -18,9 +18,12 @@
     </header>
     <main>
         <div id="graph"></div>
+        <!--
         <p id="result">{{result}}</p>
+        -->
+        <p> A live interface for you to explore the relationships between various Tamil words in the world of Tamil Grammar.</p>
         <br>
-        <img style="width: 650px; height: 300px; margin-bottom: 20px;" src="static/examplekg.png" alt="Knowledge Graph Example">
+        <img class="sample" style="width: 650px; height: 300px; margin-bottom: 20px;" src="static/examplekg.png" alt="Knowledge Graph Example">
         <br>
         <div id="OtherOptionBox">
             <form id="newwordForm" action="/result" method="post">
@@ -32,6 +35,10 @@
                     Home</button>
             </form>
         </div>
+        <br>
+        <br> 
+        <br>
+        <p style="opacity: 50%;">We are continuously working to make agaNITTyam better </p>
     </main>
     <footer>
         <p>Made with 🤍 by <a href="https://www.linkedin.com/in/amarjit-madhumalararungeethayan-7305941bb/" style="text-decoration: none;">Amarjit</a>, <a href="https://www.linkedin.com/in/dharanish-rahul-1b0774225/" style="text-decoration: none;">Dharanish</a>, <a href="https://www.linkedin.com/in/mithmusq3/" style="text-decoration: none;">Mithilesh</a></p>

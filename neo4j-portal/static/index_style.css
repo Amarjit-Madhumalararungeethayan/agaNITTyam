@@ -17,6 +17,7 @@ header {
     background-color: #ffe6b6;
     padding: 20px 0;
     display: flex;
+    box-shadow: 0px 0px 2px black;
     /* Add flexbox */
     justify-content: space-between;
     /* Align items horizontally */
