@@ -1,0 +1,15 @@
+random word accuracy = 92.1%        // rare, query overlap
+
+opposites accuracy = 100%           
+
+synonym accuracy = 99.90%           // very rare, wrong query
+
+complex query accuracy = 67%        // frequent misses || query failure due to size
+
+plural accuracy = 99.80%            // pretty rare, query overlap
+
+serthu eluthu accuracy = 99.30%     // pretty rare, query overlap
+
+tenses accuracy = 99.90%            // very rare, query failure
+
+Average Data Accuracy = 94%
