@@ -138,11 +138,10 @@ def result():
             return render_template('pirithu-result.html', result=res)
     
     elif option == "Tenses":
-            #result = execute_notebook('tenses.ipynb', 'tenses.nbconvert.ipynb')
-            #temp = synonym_gen(result)
-            #print(temp)
-            #res = temp.split('\\t')
-            res = ["வந்தேன்", "வருகிறேன்", "வருவேன்"]
+            result = execute_notebook('tenses.ipynb', 'tenses.nbconvert.ipynb')
+            temp = synonym_gen(result)
+            print(temp)
+            res = temp.split('\\t')
             print(res)
 
             options = res[0:3]

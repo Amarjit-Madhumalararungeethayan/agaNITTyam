@@ -1,1 +1,1 @@
-Total Randomness = 0.64142
+Total Randomness = 0.7071428571
