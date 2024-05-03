@@ -4,11 +4,15 @@ from flask_debugtoolbar import DebugToolbarExtension
 import subprocess
 import nbformat
 import random
+from nbconvert.preprocessors import ExecutePreprocessor
+from neo4j import GraphDatabase
 
 from helper_funtions.random_word_type import word_type_rand
 from helper_funtions.synonym import synonym_gen
 from helper_funtions.option_generator import choose_random_words
 from helper_funtions.kg_extract import extract_tamil_words
+
+uri = "bolt://localhost:7687" 
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 toolbar = DebugToolbarExtension(app)
@@ -39,6 +43,7 @@ def execute_notebook(notebook_filename, temp):
                 tagged_output.extend(cell.outputs)
 
     return (tagged_output)
+
 
 @app.route('/home')
 def index():
@@ -153,10 +158,25 @@ def result():
             return render_template('tenses-result.html', result=res)
     
     elif option == "KG":
-            result = execute_notebook('kg-head.ipynb', 'kg-head.nbconvert.ipynb')
-            #res = extract_tamil_words(' '.join(result))
+            note = 1
 
-            return render_template('kg-result.html', result=result)
+            if(note == 1):
+                t = execute_notebook('synonym.ipynb', 'synonym.nbconvert.ipynb')
+                temp = synonym_gen(t)
+                res = temp.split('\\t')
+                res[1]=res[1][:-2]
+                print(res)
+
+                driver = GraphDatabase.driver(uri)
+                cypher_query = f"MATCH (n1)-[r:எதிர்ச்சொல்]->(relatedNode) WHERE n1.lemma = '{res[1]}' RETURN relatedNode"
+                with driver.session() as session:
+                    result = session.run(cypher_query)
+                    final_temp = synonym_gen(result)
+                    final_res = final_temp.split('\\t')
+                    print(final_res)
+
+
+            return render_template('kg-result.html', result=final_temp)
 
     else:
         return "Invalid option"
