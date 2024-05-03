@@ -1,0 +1,45 @@
+Current Total Number of Nodes = 1339
+
+Chain of Size
+
++-------+-----+-----+-------+-----+-----+
+| Size  |  Cummulative |  Individual |
+|-------+-----+-----+-------+-----+-----+
+| 20    |     0        |     0        |
+| 19    |     0        |     0        |
+| 18    |     3        |     3        |
+| 17    |     7        |     4        |
+| 16    |    14        |    10        |
+| 15    |    17        |     3        |
+| 14    |    27        |    10        |
+| 13    |    35        |     8        |
+| 12    |    55        |    20        |
+| 11    |    68        |    13        |
+| 10    |   107        |    39        |
+| 9     |   132        |    25        |
+| 8     |   177        |    45        |
+| 7     |   203        |    26        |
+| 6     |   260        |    57        |
+| 5     |   458        |   198        |
+| 4     |   566        |   108        |
+| 3     |   683        |   117        |
+| 2     |   701        |    18        |
+| 1     |  1244        |   543        |
++-------+-----+-----+-------+-----+-----+
+
+Overall Chain Count = 580 
+
+KG Utilization Ratio = Overall Chain Count / Total Number of Nodes
+                     = 580 / 1339
+                     =0.43315
+
+                     (A value closer to 0 indicates effective utilization of the KG)
+
+// 
+MATCH (n)-[*<Chain Length>]-(m)
+WHERE id(n) < id(m)
+RETURN count(DISTINCT n) + count(DISTINCT m)
+
+Iterated for varying lengths
+//
+
