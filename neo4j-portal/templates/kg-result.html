@@ -21,10 +21,17 @@
         <!--
         <p id="result">{{result}}</p>
         -->
-        <p> A live interface for you to explore the relationships between various Tamil words in the world of Tamil Grammar.</p>
+        <p> <strong>தமிழ் இலக்கண உலகில் பல்வேறு தமிழ் சொற்களுக்கு இடையே உள்ள தொடர்புகளை ஆராயுங்கள். </strong></p>
+        <!-- <img class="sample" style="width: 650px; height: 300px; margin-bottom: 20px;" src="static/examplekg.png" alt="Knowledge Graph Example"> -->
         <br>
-        <img class="sample" style="width: 650px; height: 300px; margin-bottom: 20px;" src="static/examplekg.png" alt="Knowledge Graph Example">
+        <p class="special"> {{result[0]}}</p>
+        <p> இது முதல் வார்த்தை. இந்த வார்த்தையின் <strong>எதிர் வார்த்தையைக்</strong> கண்டறியவும்</p>
         <br>
+        <p class="special"> {{result[1]}}</p>
+        <p> இப்போது இந்த வார்த்தையின் <strong>பன்மையைக்</strong> கண்டறியவும்</p>
+    
+        <p class="spec"> {{result[2]}}</p>
+
         <div id="OtherOptionBox">
             <form id="newwordForm" action="/result" method="post">
                 <input type="hidden" name="option" value="KG">

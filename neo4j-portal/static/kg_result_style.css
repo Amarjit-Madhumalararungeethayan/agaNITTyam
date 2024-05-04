@@ -36,6 +36,26 @@ img {
     /* Add margin to separate the icon from text */
 }
 
+.special{
+    background-color: #ffe6b6;
+    width: fit-content;
+    padding: 10px;
+    border: #ffaa0b;
+    border-radius: 2px;
+    border-style: groove;
+}
+
+.spec{
+    margin-top: 40px;
+    background-color: #f5daa8;
+    width: fit-content;
+    padding: 10px;
+    border: rgb(255, 71, 71);
+    border-radius: 2px;
+    border-style: groove;
+    margin-bottom: 50px;
+}
+
 
 main {
     max-width: 600px;

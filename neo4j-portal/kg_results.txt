@@ -1,0 +1,10 @@
+Iteration 0
+res: வழக்கறிஞர்
+ஆதரவ
+final_res: 
+
+Iteration 1
+res: வழக்கறிஞர்
+ஆதரவ
+final_res: 
+

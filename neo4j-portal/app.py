@@ -6,6 +6,7 @@ import nbformat
 import random
 from nbconvert.preprocessors import ExecutePreprocessor
 from neo4j import GraphDatabase
+import re
 
 from helper_funtions.random_word_type import word_type_rand
 from helper_funtions.synonym import synonym_gen
@@ -158,25 +159,39 @@ def result():
             return render_template('tenses-result.html', result=res)
     
     elif option == "KG":
-            note = 1
+        
+        #subopt = random.randint(1,6)
+        subopt = 2
+    
+        if subopt == 2: 
 
-            if(note == 1):
-                t = execute_notebook('synonym.ipynb', 'synonym.nbconvert.ipynb')
-                temp = synonym_gen(t)
-                res = temp.split('\\t')
-                res[1]=res[1][:-2]
-                print(res)
+            dataset = [["ஆண்", "பெண்", "பெண்கள்"]]
+            result = dataset[0]
+            
+            #driver = GraphDatabase.driver(uri)
+            #cypher_query1 = f"MATCH p=()-[r:`இணைப்பொருட்ச்சொல்`]->() WITH p, RAND() AS random RETURN p ORDER BY random LIMIT 1"
+            #with driver.session() as session:
+            #    result1 = session.run(cypher_query1)
+            #    for record in result1:
+            #        path = record["p"]
+            #        start_node = path.start_node
+            #        line_text = start_node.get("line_text")
+            #        if line_text:
+            #            words_array = line_text.split()
+            #            print(words_array)
+            #            break  
+            #        else:
+            #            print("No 'line_text' found in results")
+                
 
-                driver = GraphDatabase.driver(uri)
-                cypher_query = f"MATCH (n1)-[r:எதிர்ச்சொல்]->(relatedNode) WHERE n1.lemma = '{res[1]}' RETURN relatedNode"
-                with driver.session() as session:
-                    result = session.run(cypher_query)
-                    final_temp = synonym_gen(result)
-                    final_res = final_temp.split('\\t')
-                    print(final_res)
+            #cypher_query2 = f"MATCH (n1)-[r:இணைப்பொருட்ச்சொல்]->(relatedNode) WHERE n1.lemma = '{res[0]}' RETURN relatedNode"
+            #with driver.session() as session:
+            #    result2 = session.run(cypher_query2)
+            #    final_temp = synonym_gen(result2)
+            #    final_res = final_temp.split('\\t')
+            #    print(final_res)
 
-
-            return render_template('kg-result.html', result=final_temp)
+            return render_template('kg-result.html', result=result)
 
     else:
         return "Invalid option"
