@@ -1,4 +1,4 @@
-<img width="888" alt="image" src="https://github.com/Amarjit-Madhumalararungeethayan/agaNITTyam/assets/83509162/3bc4e64f-a3ab-40e1-bbfa-7f7518c61329">Welcome to agaNITTyam!
+Welcome to agaNITTyam!
 
 <img width="251" alt="logo" src="https://github.com/Amarjit-Madhumalararungeethayan/agaNITTyam/assets/83509162/313c05bd-e9af-4f66-838c-674044fee6b1">
 
