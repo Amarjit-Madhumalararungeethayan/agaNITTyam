@@ -10,4 +10,8 @@ This study suggests a revolutionary method for teaching school Tamil grammar by 
 
 <p>&nbsp;</p>
 
+<h3> Our Algorithm </h3>
+
+<p>&nbsp;</p>
+
 <img width="888" alt="image" src="https://github.com/Amarjit-Madhumalararungeethayan/agaNITTyam/assets/83509162/71150ab6-13e5-4541-bd2c-dae7c12eb37d">
